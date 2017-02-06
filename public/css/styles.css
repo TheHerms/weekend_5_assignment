@@ -1,12 +1,12 @@
+body {
+  background-color: #b72c94;
+}
+
 h1 {
   text-align: center;
   font-weight: bolder;
   color: red;
   background-color: blue;
-}
-
-body{
-  background-color: gray;
 }
 
 img {

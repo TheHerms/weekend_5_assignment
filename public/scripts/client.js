@@ -1,3 +1,16 @@
+var app = angular.module('myApp', ['ngRoute']);
+
+app.config(function($routeProvider, $locationProvider){
+ $routeProvider.when('/main', {
+   templateUrl: 'views/pages/main.html',
+   controller: 'GifController as gif'
+ }).when('/favorites', {
+   templateUrl: 'views/pages/favorites.html',
+   controller: 'GifController as gif'
+ });
+ $locationProvider.html5Mode(true);
+});
+
 var app = angular.module('myApp', []);
 
 app.controller('GifController', function(GifGetter){
@@ -19,15 +32,3 @@ app.controller('GifController', function(GifGetter){
     });
   };
 });
-// var app = angular.module('myApp', ['ngRoute']);
-//
-// app.config(function($routeProvider, $locationProvider){
-//  $routeProvider.when('/main', {
-//    templateUrl: 'views/pages/main.html',
-//    controller: 'GifController as gif'
-//  }).when('/favorites', {
-//    templateUrl: 'views/pages/favorites.html',
-//    controller: 'GifController as gif'
-//  });
-//  $locationProvider.html5Mode(true);
-// });
