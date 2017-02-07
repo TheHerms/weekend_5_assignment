@@ -1,0 +1,27 @@
+<main ng-controller="GifController as gif">
+<h1>GIFS GIFS GIFS</h1>
+
+
+    <section>
+      <img ng-show="gif.randomGifUrl" ng-src="{{gif.randomGifUrl}}">
+
+    </section>
+
+
+    <section>
+      <h2>Want a Different GIF?</h2>
+      <input ng-model="gif.searchQuery" type='text' placeholder="Search Here">
+      <input type="submit" name="Search" value="SEARCH FOR GIFs" ng-click="gif.searchGif(gif.searchQuery)">
+      <img ng-repeat="gifs in gif.searchGifUrl" ng-show="gif.searchGifUrl"
+      ng-src="{{gifs.images.original.url}}" alt="">
+    </section>
+
+
+  </div>
+  <form class ="submit">
+       <input type="text" ng-model="favoriteGif" placeholder="Comment Here">
+       <button type="submit">Favorite this Gif</button>
+  </form>
+
+
+</main>
