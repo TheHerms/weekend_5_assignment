@@ -1,4 +1,4 @@
-angular.module("gifApp", [ "ngRoute" ]).config([
+angular.module("myApp", [ "ngRoute" ]).config([
   "$routeProvider",
   "$locationProvider",
   function($routeProvider, $locationProvider) {

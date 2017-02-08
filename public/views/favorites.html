@@ -1,3 +1,14 @@
 <main>
 
+  Favorite Count: {{fave.FavoritesService.favoriteCount}}
+
+  <a href="/">Search</a>
+
+  <ul>
+    
+    <li ng-repeat="favorite in fave.favorites">
+      <img ng-src={{favorite.url}} alt="Image of {{favorite.url}}" />
+      <p>{{favorite.comment}}</p>
+    </li>
+  </ul>
 </main>

@@ -1,19 +1,19 @@
 var express = require('express');
-var app = express();
-var port = process.env.PORT || 3000;
-var path = require('path')
 var bodyParser = require('body-parser');
-var pg = require('pg');
-var index = require("./routes/favorites");
-// var config = {database: 'favorite_Gifs'}
+var index = require("./routes/index");
+var favorites = require("./routes/favorites");
 
-var server = app.listen(port, function() {
-  console.log('Server listening on port', server.address().port);
-});
+var app = express();
+
+
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
+app.use('/favorites', favorites);
 
-app.get('/', function(req, res){
-  res.sendFile(path.join(__dirname, '/public/views/index.html'));
+app.use("/*", index);
+
+var port = process.env.PORT || 3000;
+var server = app.listen(port, function() {
+  console.log('Server listening on port', server.address().port);
 });
